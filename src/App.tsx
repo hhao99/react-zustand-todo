@@ -1,16 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import TodoList from '@/components/todo/TodoList'
+import AddTodo from '@/components/todo/AddTodo'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1 className='text-3xl text-slate-400'>
-        Hello react!
+      <h1 className='text-3xl text-indie-600'>
+        Todo Example
       </h1>
+      <AddTodo />
+      <TodoList />
     </>
   )
 }
