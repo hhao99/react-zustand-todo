@@ -1,17 +1,33 @@
 import Todo from '@/models/todo'
 import useStore  from '@/store'
 
+// shadcn ui
+import { Button } from '@/components/ui/button'
+import {
+    TableRow,
+    TableCell,
+}
+from '@/components/ui/table'
+
 const TodoItem = ({todo}: { todo: Todo})=> {
-    const removeTask = useStore( (state) => state.removeTask )
+    const removeTodo = useStore( (state) => state.removeTodo )
     const toggleState = useStore( (state) => state.toggleState )
     return (
-        <div>
-            <span className="text-slate-600">{todo.task}</span>
-            <span>
-                <button>-</button>
-                <button>?</button>
-            </span>
-        </div>
+        <TableRow>
+            <TableCell>{todo.id}</TableCell>
+            <TableCell>{todo.task}</TableCell>
+            <TableCell>
+                <Button variant={'outline'} onClick={ ()=> toggleState(todo.id)}>{todo.done?'OK':'Open'}</Button>
+            </TableCell>
+            <TableCell>
+                <Button variant={'destructive'} 
+                    onClick={ ()=> removeTodo(todo.id) }
+                >
+                    -
+                </Button>
+            </TableCell>
+           
+        </TableRow>
     )
 }
 
