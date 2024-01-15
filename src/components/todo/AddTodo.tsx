@@ -15,7 +15,7 @@ import {
     SheetTrigger,
   } from '@/components/ui/sheet'
 
-
+import { toast } from 'sonner'
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -32,7 +32,14 @@ const AddTodo = ()=> {
                 addTodo(task)
                 setCounter( pre => pre+1)
                 setTask('test ' + counter)
-
+            }
+            else {
+                toast("Task length must greater than 4.", {
+                    action: {
+                        label: 'Close',
+                        onClick: ()=> console.log('close'),
+                    }
+                })
             }
         }
     }

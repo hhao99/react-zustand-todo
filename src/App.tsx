@@ -11,7 +11,7 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/ui/card'
-
+import { Toaster } from '@/components/ui/sonner'
 function App() {
 
   return (
@@ -27,8 +27,9 @@ function App() {
           <TodoList />
         </CardContent>
         <CardFooter>
-          <h3>Created by Eric Hao @ 2024 Jan.</h3>
+          <h5>Created by Eric Hao @ Jan. 2024</h5>
         </CardFooter>
+        <Toaster />
       </Card>
     </>
   )
