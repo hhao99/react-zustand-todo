@@ -1,4 +1,4 @@
-import Todo from '@/models/todo'
+import { Todo } from '@/models/todo'
 import useStore  from '@/store'
 
 // shadcn ui
@@ -55,8 +55,8 @@ const RemoveAlertDialog = ({todo}:{todo: Todo})=> {
                     </AlertDialogDescription>
                     <AlertDialogFooter>
                         <AlertDialogCancel>Cancel</AlertDialogCancel>
-                        <AlertDialogAction>
-                            <Button onClick={ ()=> onRemove(todo)}>Confirm</Button>
+                        <AlertDialogAction onClick={ ()=> onRemove(todo)}>
+                            Confirm
                         </AlertDialogAction>
                     </AlertDialogFooter>
                 </AlertDialogContent>

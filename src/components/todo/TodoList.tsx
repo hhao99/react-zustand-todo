@@ -1,4 +1,4 @@
-import Todo from '@/models/todo'
+import { Todo } from '@/models/todo'
 import useStore from '@/store'
 import TodoItem from '@/components/todo/TodoItem'
 
